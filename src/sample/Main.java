@@ -17,9 +17,13 @@ public class Main extends Application
     @Override
     public void start(Stage primaryStage) throws Exception
     {
-        Parent root = FXMLLoader.load(getClass().getResource("mainWindow.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("mainWindow.fxml"));
+        Parent root = fxmlLoader.load();
         primaryStage.setTitle("Music Player");
-        primaryStage.setScene(new Scene(root, 300, 275));
+        Scene mainScene = new Scene(root, 450, 140);
+        primaryStage.setScene(mainScene);
+        Controller mainController = fxmlLoader.getController();
+        mainController.setMainScene(mainScene);
         primaryStage.show();
     }
 }

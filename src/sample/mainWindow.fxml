@@ -1,43 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-
-<?import javafx.geometry.Insets?>
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<Pane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="300.0" minWidth="450.0"
-      prefHeight="300.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/10.0.1">
+<Pane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="140.0" minWidth="450.0"
+      prefHeight="140.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/8.0.172-ea"
+      fx:controller="sample.Controller">
     <children>
-        <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="300.0" minWidth="450.0"
-              prefHeight="300.0" prefWidth="450.0">
+        <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="140.0" minWidth="450.0"
+              prefHeight="140.0" prefWidth="450.0">
             <children>
-                <Label fx:id="trackTitleLabel" prefHeight="30.0" prefWidth="450.0" text="Label">
+                <Label fx:id="trackTitleLabel" prefHeight="30.0" prefWidth="450.0">
                     <padding>
                         <Insets bottom="2.0" left="2.0" right="2.0" top="2.0"/>
                     </padding>
                 </Label>
                 <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                     <children>
-                        <ProgressBar fx:id="trackProgressBar" prefHeight="20.0" prefWidth="300.0" progress="0.0"/>
-                    </children>
-                </HBox>
-                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
-                    <children>
-                        <Button fx:id="playButton" mnemonicParsing="false" text="Play">
-                            <HBox.margin>
-                                <Insets right="20.0"/>
-                            </HBox.margin>
-                        </Button>
-                        <Button fx:id="pauseButton" mnemonicParsing="false" text="Pause">
-                            <HBox.margin>
-                                <Insets right="20.0"/>
-                            </HBox.margin>
-                        </Button>
-                        <Button fx:id="stopButton" mnemonicParsing="false" text="Stop">
-                            <HBox.margin>
-                                <Insets right="20.0"/>
-                            </HBox.margin>
-                        </Button>
-                        <Button fx:id="chooseTrackButton" mnemonicParsing="false" text="Choose track"/>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="450.0">
+                            <children>
+                                <Slider fx:id="trackProgressSlider" blockIncrement="1.0" majorTickUnit="1.0"
+                                        minorTickCount="1">
+                                    <VBox.margin>
+                                        <Insets left="50.0" right="50.0"/>
+                                    </VBox.margin>
+                                </Slider>
+                                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                    <children>
+                                        <Button fx:id="playButton" mnemonicParsing="false" text="Play">
+                                            <HBox.margin>
+                                                <Insets right="20.0"/>
+                                            </HBox.margin>
+                                        </Button>
+                                        <Button fx:id="pauseButton" mnemonicParsing="false" text="Pause">
+                                            <HBox.margin>
+                                                <Insets right="20.0"/>
+                                            </HBox.margin>
+                                        </Button>
+                                        <Button fx:id="stopButton" mnemonicParsing="false" text="Stop">
+                                            <HBox.margin>
+                                                <Insets right="20.0"/>
+                                            </HBox.margin>
+                                        </Button>
+                                        <Slider fx:id="volumeSlider" blockIncrement="1.0" majorTickUnit="1.0"
+                                                minorTickCount="1" snapToTicks="true" value="10.0"/>
+                                    </children>
+                                </HBox>
+                                <Button fx:id="chooseTrackButton" mnemonicParsing="false" text="Choose track"/>
+                            </children>
+                        </VBox>
                     </children>
                 </HBox>
             </children>
