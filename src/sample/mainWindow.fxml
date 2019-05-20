@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<Pane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="300.0" minWidth="450.0"
+      prefHeight="300.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/10.0.1">
+    <children>
+        <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="300.0" minWidth="450.0"
+              prefHeight="300.0" prefWidth="450.0">
+            <children>
+                <Label fx:id="trackTitleLabel" prefHeight="30.0" prefWidth="450.0" text="Label">
+                    <padding>
+                        <Insets bottom="2.0" left="2.0" right="2.0" top="2.0"/>
+                    </padding>
+                </Label>
+                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                    <children>
+                        <ProgressBar fx:id="trackProgressBar" prefHeight="20.0" prefWidth="300.0" progress="0.0"/>
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                    <children>
+                        <Button fx:id="playButton" mnemonicParsing="false" text="Play">
+                            <HBox.margin>
+                                <Insets right="20.0"/>
+                            </HBox.margin>
+                        </Button>
+                        <Button fx:id="pauseButton" mnemonicParsing="false" text="Pause">
+                            <HBox.margin>
+                                <Insets right="20.0"/>
+                            </HBox.margin>
+                        </Button>
+                        <Button fx:id="stopButton" mnemonicParsing="false" text="Stop">
+                            <HBox.margin>
+                                <Insets right="20.0"/>
+                            </HBox.margin>
+                        </Button>
+                        <Button fx:id="chooseTrackButton" mnemonicParsing="false" text="Choose track"/>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </children>
+</Pane>
