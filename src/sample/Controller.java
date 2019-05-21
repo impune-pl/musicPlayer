@@ -58,11 +58,14 @@ public class Controller
             extensionList.add("mp3");
             fileChooser.setSelectedExtensionFilter(new FileChooser.ExtensionFilter("Tracks", extensionList));
             File file = fileChooser.showOpenDialog(mainScene.getWindow());
-            playerThread.changeTrack(file);
-            this.playButton.setDisable(false);
-            this.pauseButton.setDisable(false);
-            this.stopButton.setDisable(false);
-            this.volumeSlider.setDisable(false);
+            if (file != null)
+            {
+                playerThread.changeTrack(file);
+                this.playButton.setDisable(false);
+                this.pauseButton.setDisable(false);
+                this.stopButton.setDisable(false);
+                this.volumeSlider.setDisable(false);
+            }
         });
 
         this.volumeSlider.valueProperty()
