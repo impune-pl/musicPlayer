@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <Pane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="140.0" minWidth="450.0"
       prefHeight="140.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/8.0.172-ea"
-      fx:controller="sample.Controller">
+      fx:controller="SimpleMusicPlayer.Controller">
     <children>
         <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="140.0" minWidth="450.0"
               prefHeight="140.0" prefWidth="450.0">
@@ -27,12 +27,7 @@
                                 </Slider>
                                 <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                                     <children>
-                                        <Button fx:id="playButton" mnemonicParsing="false" text="Play">
-                                            <HBox.margin>
-                                                <Insets right="20.0"/>
-                                            </HBox.margin>
-                                        </Button>
-                                        <Button fx:id="pauseButton" mnemonicParsing="false" text="Pause">
+                                        <Button fx:id="playButton" mnemonicParsing="false" prefWidth="47.0" text="Play">
                                             <HBox.margin>
                                                 <Insets right="20.0"/>
                                             </HBox.margin>

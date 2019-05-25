@@ -1,4 +1,4 @@
-package sample;
+package SimpleMusicPlayer;
 
 import javafx.application.Platform;
 import javafx.scene.control.Label;
@@ -53,17 +53,18 @@ public class Player implements Runnable
         }
     }
 
-    public synchronized void play()
+    public synchronized String togglePausePlay()
     {
         if (this.mediaPlayer.getStatus()
                             .equals(MediaPlayer.Status.PLAYING))
         {
             this.mediaPlayer.pause();
+            return "Play";
         }
         else
         {
-            this.mediaPlayer.seek(mediaPlayer.getStartTime());
             this.mediaPlayer.play();
+            return "Pause";
         }
 
     }
@@ -77,15 +78,6 @@ public class Player implements Runnable
         {
             this.mediaPlayer.stop();
         }
-    }
-
-    public synchronized void pause()
-    {
-        if (this.mediaPlayer.getStatus()
-                            .equals(MediaPlayer.Status.PLAYING))
-            this.mediaPlayer.pause();
-        else
-            this.mediaPlayer.play();
     }
 
     public void setVolume(Double volume)

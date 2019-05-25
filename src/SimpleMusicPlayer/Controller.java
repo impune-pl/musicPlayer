@@ -1,4 +1,4 @@
-package sample;
+package SimpleMusicPlayer;
 
 import javafx.application.Platform;
 import javafx.fxml.FXML;
@@ -7,8 +7,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
 import javafx.stage.FileChooser;
+import javafx.stage.WindowEvent;
 
-import java.awt.event.ActionEvent;
 import java.io.File;
 import java.util.ArrayList;
 
@@ -28,9 +28,6 @@ public class Controller
     private Button playButton;
 
     @FXML
-    private Button pauseButton;
-
-    @FXML
     private Button stopButton;
 
     @FXML
@@ -45,9 +42,7 @@ public class Controller
         this.playerThread = new Player(trackProgressSlider, trackTitleLabel, volumeSlider.getValue());
         playerThread.run();
 
-        this.playButton.setOnMouseClicked(event -> playerThread.play());
-
-        this.pauseButton.setOnMouseClicked(event -> playerThread.pause());
+        this.playButton.setOnMouseClicked(event -> this.playButton.setText(playerThread.togglePausePlay()));
 
         this.stopButton.setOnMouseClicked(event -> playerThread.stop());
 
@@ -62,7 +57,6 @@ public class Controller
             {
                 playerThread.changeTrack(file);
                 this.playButton.setDisable(false);
-                this.pauseButton.setDisable(false);
                 this.stopButton.setDisable(false);
                 this.volumeSlider.setDisable(false);
             }
@@ -83,13 +77,12 @@ public class Controller
                                 });
 
         this.playButton.setDisable(true);
-        this.pauseButton.setDisable(true);
         this.stopButton.setDisable(true);
         this.volumeSlider.setDisable(true);
     }
 
     @FXML
-    public void exitApplication(ActionEvent event)
+    public void exitApplication(WindowEvent event)
     {
         playerThread.kill();
         Platform.exit();

@@ -1,4 +1,4 @@
-package sample;
+package SimpleMusicPlayer;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -24,6 +24,7 @@ public class Main extends Application
         primaryStage.setScene(mainScene);
         Controller mainController = fxmlLoader.getController();
         mainController.setMainScene(mainScene);
+        primaryStage.setOnCloseRequest(e -> mainController.exitApplication(e));
         primaryStage.show();
     }
 }
